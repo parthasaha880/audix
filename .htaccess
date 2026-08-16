@@ -1,6 +1,12 @@
 DirectoryIndex index.html
 Options -MultiViews
 RewriteEngine On
+
+# Keep the same hostname; only force HTTPS.
+# Do not send www → audix.kormo.bd until the apex A record exists in DNS.
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.html [L]
