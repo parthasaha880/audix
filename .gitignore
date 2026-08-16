@@ -1,5 +1,12 @@
-# Track only the static export for direct git upload.
+# Track only the static site files at repo root (contents of Next.js out/, not the out folder).
 *
 !.gitignore
-!out/
-!out/**
+!.htaccess
+!index.html
+!404.html
+!_next/
+!_next/**
+!404/
+!404/**
+!_not-found/
+!_not-found/**
