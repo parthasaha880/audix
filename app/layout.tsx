@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://audix.kormo.bd'),
   title: 'AudiX — Intelligent Audit OS',
   description: 'A futuristic internal audit command center for enterprise banking risk, controls, and evidence.',
   generator: 'AudiX',
